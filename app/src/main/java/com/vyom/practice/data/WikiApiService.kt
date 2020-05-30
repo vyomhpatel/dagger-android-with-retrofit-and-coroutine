@@ -1,7 +1,6 @@
 package com.vyom.practice.data
 
 import com.vyom.practice.data.model.Model
-import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Query
 
