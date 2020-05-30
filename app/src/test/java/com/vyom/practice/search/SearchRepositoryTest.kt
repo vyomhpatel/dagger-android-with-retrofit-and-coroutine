@@ -1,14 +1,12 @@
-package com.vyom.practice
+package com.vyom.practice.search
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
+import com.vyom.practice.TestCoroutineRule
 import com.vyom.practice.data.WikiApiService
-import com.vyom.practice.search.SearchRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Rule
@@ -34,7 +32,7 @@ class SearchRepositoryTest {
 
     @Test
     fun test() = runBlockingTest {
-        repository.getResult("trump", coroutineContext)
+        repository.getResult("trump")
         verify(service).hitCountCheckAsync(any(), any(), any(), any())
     }
 }
