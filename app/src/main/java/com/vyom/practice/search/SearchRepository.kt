@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 open class SearchRepository @Inject constructor(@VisibleForTesting var service: WikiApiService) {
 
-    suspend fun getResult(searchTerm: String): Model.Data {
+    suspend fun getData(searchTerm: String): Model.Data {
         return service.hitCountCheckAsync("query", "json", "search", searchTerm)
     }
 }

@@ -31,8 +31,8 @@ class SearchRepositoryTest {
     }
 
     @Test
-    fun test() = runBlockingTest {
-        repository.getResult("trump")
+    fun `getData calls hitCountCheckAsync from wikiApiService`() = runBlockingTest {
+        repository.getData("trump")
         verify(service).hitCountCheckAsync(any(), any(), any(), any())
     }
 }

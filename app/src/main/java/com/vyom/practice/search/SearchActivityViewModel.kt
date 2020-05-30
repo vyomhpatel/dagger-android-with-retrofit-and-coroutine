@@ -14,7 +14,7 @@ class SearchActivityViewModel @Inject constructor(private val repo: SearchReposi
     fun getResponse(searchTerm: String): LiveData<Result<Model.Data>> {
         return liveData(viewModelScope.coroutineContext + Dispatchers.IO) {
             try {
-                emit(Result.success(repo.getResult(searchTerm)))
+                emit(Result.success(repo.getData(searchTerm)))
             } catch (t: Throwable) {
                 emit(Result.failure<Model.Data>(t))
             }
